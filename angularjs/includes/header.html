@@ -1,0 +1,33 @@
+<nav ng-controller="headerCtrl" class="navbar navbar-expand-lg bg-primary px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/home">{{ title }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul ng-hide="loginStatus" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="btn btn-success me-2" href="#!/login" role="button">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-warning" href="#!/register" role="button">Register</a>
+                </li>
+            </ul>
+            
+            <ul ng-show="loginStatus" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page">{{ user.name }}</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-warning"
+                        ng-click="logout()">
+                        Logout
+                    </button>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    
+    <body ng-app="chat-app">
+        <div ng-controller="chat-controller">
+            <h1>Real Time Chat Application</h1>
+            select chat room :
+            <select id="" ng-change="roomSelected()" ng-model="room">
+                <option value="">--select room--</option>
+                <option value="general">general</option>
+                <option value="coding">coding</option>
+                <option value="games">games</option>
+            </select>
+
+            <div ng-show="room">
+                <div class="message-box">
+                    <div ng-switch="type">
+                        <div ng-switch-when="username">
+                            <div style="margin-bottom: 15px;" ng-repeat="msg in roomMessages | orderBy:'username' | filter:search">
+                                {{ msg.timestamp }}-{{ msg.username }}: <br>
+                                {{ msg.message }}
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="time">
+                            <div style="margin-bottom: 15px;" ng-repeat="msg in roomMessages | orderBy:'time' | filter:search">
+                                {{ msg.timestamp }}-{{ msg.username }}: <br>
+                                {{ msg.message }}
+                            </div>
+                        </div>
+
+                        <div ng-switch-default>
+                            <div style="margin-bottom: 15px;" ng-repeat="msg in roomMessages | filter:search">
+                                {{ msg.timestamp }}-{{ msg.username }}: <br>
+                                {{ msg.message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>
+                massage : <textarea ng-model="msg"></textarea> <button ng-click="insertMsg()">send</button>
+            </p>
+            <p>
+                sort by :
+                <select ng-model="type">
+                    <option value="">--select--</option>
+                    <option value="username">username</option>
+                    <option value="time">time</option>
+                </select>
+            </p>
+            <p>
+                search : <input type="text" ng-model="search">
+            </p>
+            <button>Apply</button>
+        </div>
+        <script src="4.script.js"></script> 
+    </body>
+    </html> -->
+
+   

@@ -1,0 +1,35 @@
+<h1 class="text-center my-3">
+    Payments
+</h1>
+
+<form class="w-75 m-auto" ng-submit="proceed()"
+     ng-init="user=user" name="form">
+    <div class="row mb-4">
+        <label for="name">Username</label>
+        <input ng-model="user.name" class="form-control" type="text" id="name" readonly>
+    </div>
+    
+    <div class="row mb-4">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" id="email" readonly ng-model="user.email">
+    </div>
+    
+    <div class="row mb-4">
+        <label for="name">Insurance Type</label>
+        <input ng-model="type" class="form-control" type="text" id="name" readonly>
+    </div>
+
+    <div class="row mb-4">
+        <label for="phone">Phone Number</label>
+        <input ng-model="user.phone" class="form-control" type="text" id="phone">
+    </div>
+
+    <div class="row mb-4">
+        <label for="add">Address</label>
+        <textarea ng-model="user.add" rows="4" class="form-control" type="text" id="add"></textarea>
+    </div>
+
+    <div class="row">
+        <input type="submit" value="Proceed to Payment" class="btn btn-primary">
+    </div>
+</form>

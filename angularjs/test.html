@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="my_app" lang="en">
+
+    <head>
+        <title>Hello, World</title>
+        <script src="./node_modules/angular/angular.js"></script>
+    </head>
+
+    <body ng-controller="my_ctrl">
+        <form id="f" name="form" onsubmit="test1(event)" action="https://www.google.com">
+            <input ng-minlength="5" ng-maxlength="12" type="text" ng-model="txt" name="q" required>
+            <span ng-show="form.q.$touched && form.q.$error.required">
+                This field is required
+            </span>
+            <span ng-show="form.q.$touched && form.q.$error.minlength">
+                min length must be 5
+            </span>
+            <span ng-show="form.q.$touched && form.q.$error.maxlength">
+                max length must be 12
+            </span>
+            <br>
+            <input id="file" type="file"  ng-model="file" name="file" required>
+            <span ng-show="form.file.$touched && form.file.$error.required">
+                This field is required
+            </span>
+            <img src="" id="img" alt="">
+            <br>
+            <button ng-disabled="form.$invalid" type="submit">search</button>
+        </form>
+    </body>
+    
+    <script>
+        var app = angular.module("my_app", []);
+
+        var form = document.getElementById("f");
+
+        app.controller("my_ctrl", function($scope) {
+            $scope.test = function() {
+                console.log(form);
+                console.log("Submitted");
+            }
+        });
+
+        function fileSelected() {
+            console.log("File selected")
+            var f11 = document.getElementById("file").files[0];
+            var render = new FileReader();
+            render.readAsDataURL(f11);
+
+            render.onload = function() {
+                document.getElementById("img").setAttribute("src", render.result);
+            }
+            console.log(f11);
+        }
+
+        function test1(e) {
+            e.preventDefault();
+            console.log("My function");
+            console.log(form);
+        }
+
+
+    </script>
+
+</html>

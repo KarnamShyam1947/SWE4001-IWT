@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+} */
+
+.calculator {
+    background: black;
+    padding: 10px;
+    width: 350px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas: 
+    "sum sub mul div"
+    "b7 b8 b9 pw"
+    "b4 b5 b6 eq"
+    "b1 b2 b3 eq"
+    "b0 de cl eq";
+    grid-gap: 2px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    /* min-height: calc(100vh - 30px); */
+}
+
+input{
+    text-align: right;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.buttons button {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+}
+
+#b1 {
+    grid-area: b1;
+}
+#b2 {
+    grid-area: b2;
+}
+#b3 {
+    grid-area: b3;
+}
+#b4 {
+    grid-area: b4;
+}
+#b5 {
+    grid-area: b5;
+}
+#b6 {
+    grid-area: b6;
+}
+#b7 {
+    grid-area: b7;
+}
+#b8 {
+    grid-area: b8;
+}
+#b9 {
+    grid-area: b9;
+}
+#b0 {
+    grid-area: b0;
+}
+
+#sum {
+    grid-area: sum;
+}
+#sub {
+    grid-area: sub;
+}
+#mul {
+    grid-area: mul;
+}
+#div {
+    grid-area: div;
+}
+#cl {
+    grid-area: cl;
+}
+#eq {
+    grid-area: eq;
+}
+#de {
+    grid-area: de;
+}
+#pw {
+    grid-area: pw;
+}
+
+#error {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}

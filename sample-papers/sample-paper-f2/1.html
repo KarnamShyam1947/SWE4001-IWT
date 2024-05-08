@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1Q | MODEL PAPER F2 SLOT</title>
+    </head>
+
+    <body>
+        <input type="text" id="input">
+        <br>
+        <button id="insert">
+            Insert
+        </button>
+        
+        <button id="delete">
+            Delete
+        </button>
+        
+        <button id="color">
+            Color
+        </button>
+
+        <ol id="list">
+            
+        </ol>
+
+        <script>
+            let del = document.getElementById("delete");
+            let list = document.getElementById("list");
+            let input = document.getElementById("input");
+            let insert = document.getElementById("insert");
+            let color = document.getElementById("color");
+
+            let item = [];
+
+            function updateList(withColors) {
+                list.innerHTML = '';
+                for(let i = 0; i < item.length; i++) {
+                    let li = document.createElement("li");
+                    li.textContent = item[i];
+
+                    if(withColors && i%2 == 0) {
+                        li.style.backgroundColor = 'red';
+                    }
+                    if(withColors && i%2 != 0)  {
+                        li.style.backgroundColor = 'blue';
+                    }
+                    list.appendChild(li);
+                }
+            }
+
+            insert.onclick = function() {
+                let value = input.value.trim();
+                if(value == "") {
+                    alert("Input field must contain some text");
+                }
+                else {
+                    item.push(value);
+                    input.value = "";
+                    updateList(false);
+                }
+            }
+
+            del.onclick = function() {
+                item.shift();
+                updateList(false);
+            }
+
+            color.onclick = function() {
+                updateList(true);
+            }
+        </script>
+    </body>
+</html>

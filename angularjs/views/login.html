@@ -1,0 +1,57 @@
+<form class="container" name="loginForm" ng-submit="login(user)">
+
+    <h1 class="text-center my-3">
+        Customer Login
+    </h1>
+    
+    <div ng-show="error">
+        <div class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+            <strong>Error...!!</strong> Invalid email or password
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <label class="from-label">Email</label>
+        <input
+            type="email"
+            name="email"
+            required
+            ng-model="user.email"
+            class="form-control"
+            ng-minlength="5"
+            ng-class="{'is-invalid' : loginForm.email.$touched && loginForm.email.$invalid}">
+        <div
+            class="invalid-feedback"
+            ng-show="loginForm.email.$invalid && loginForm.email.$error.required"> Email is required</div>
+        
+        <div
+            class="invalid-feedback"
+            ng-show="loginForm.email.$invalid && loginForm.email.$error.email">Enter an valid email</div>
+    </div>
+    
+    <div class="row mt-4">
+        <label class="from-label">Password</label>
+        <input
+            type="password"
+            name="password"
+            required
+            ng-model="user.password"
+            class="form-control"
+            ng-minlength="8"
+            ng-class="{'is-invalid' : loginForm.password.$touched && loginForm.password.$invalid}">
+        <div
+            class="invalid-feedback"
+            ng-show="loginForm.password.$invalid && loginForm.password.$error.required"> password is required</div>
+        
+        <div
+            class="invalid-feedback"
+            ng-show="loginForm.password.$invalid && loginForm.password.$error.minlength">Minium length must be 8 characters</div>
+    </div>
+
+    <div class="row mt-4 d-grid">
+        <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary">
+            Login
+        </button>
+    </div>
+</form>

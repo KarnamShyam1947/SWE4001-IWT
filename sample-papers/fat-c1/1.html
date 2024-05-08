@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1Q | C1 FAT</title>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>Product Name</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Product Price</td>
+                <td><input type="text" id="price"></td>
+            </tr>
+            <tr>
+                <td>Sale</td>
+                <td>
+                    <select id="sale">
+                        <option value="">--select sale--</option>
+                        <option value="10">Summer</option>
+                        <option value="5">New Year</option>
+                        <option value="15">Clearance</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button id="btn">
+            Get Discount
+        </button>
+        <div id="result">
+
+        </div>
+
+        <script>
+            let btn = document.getElementById("btn");
+            let sale = document.getElementById("sale");
+            let name = document.getElementById("name");
+            let price = document.getElementById("price");
+            let result = document.getElementById("result");
+            
+            btn.onclick = function() {
+                if(sale.value == "" || price.value == "" || name.value == "") {
+                    alert("Enter details in all fields");
+                }
+                else {
+                    let discount = sale.value;
+                    let discountedPrice = price.value - ((price.value * discount)/100);
+                    result.innerHTML = `
+                        The discount is ${discount}% <br>
+                        The discounted price is ${discountedPrice}
+                    `;
+                }
+            }
+
+        </script>
+    </body>
+</html>

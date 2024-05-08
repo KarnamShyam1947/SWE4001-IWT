@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="MainModule">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AngularJs</title>
+
+        <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+        <script src="app.js"></script>
+    </head>
+    
+    <body>
+        <ng-include src="'includes/header.html'"></ng-include>
+        <ng-view></ng-view>
+    </body>
+</html>
